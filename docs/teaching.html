@@ -9,6 +9,7 @@
     <link href="css/pwzhao.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.2/base64.min.js"></script>
   </head>
 
   <body>
@@ -65,11 +66,26 @@
       <li> <a href= ./Mechanics/homework8.pdf > Homework 8  </a>  (Due: Dec 14, 2021) </li> 
     
       </ol>  
-          
-      <hr> 
+
+      <hr><hr> 
       <h4> 量子力学讨论班  </h4>
       <hr>
       <h5> 成绩查询  </h5>
+
+      <form>
+        <h5 class="h1">量子力学讨论班 成绩查询</h5>
+        <label>学号：</label>
+        <input type="text" name="stu_num" placeholder="0123456789">
+        <button type="button" onclick="search(this.form.stu_num.value)">查询</button>
+      </form>
+      <table id="datatable" border="1" style="margin: auto">
+        <tr>
+          <td>学号</td><td>姓名</td><td>分数</td>
+        </tr>
+        <tr>
+          <td>none</td><td>none</td><td>none</td>
+        </tr>
+      </table>
 
 
     </section>
@@ -95,4 +111,26 @@
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 
 </body>
+
+<script type="text/javascript">
+  
+  c = Base64.decode('W3si5a2m5Y+3IjoiMTYwMDA2MTQwMSIsIuWnk+WQjSI6IuWQleael+WNmiIsIuWIhuaVsCI6ODJ9LHsi5a2m5Y+3IjoiMTcwMDAxMTQxMiIsIuWnk+WQjSI6Iuatpua3u+W9pyIsIuWIhuaVsCI6OTJ9LHsi5a2m5Y+3IjoiMTgwMDAxMTM2NiIsIuWnk+WQjSI6IuauteWFg+WFtCIsIuWIhuaVsCI6OTF9LHsi5a2m5Y+3IjoiMTgwMDAxMTg0NSIsIuWnk+WQjSI6IuWQtOaYiuS6rCIsIuWIhuaVsCI6ODB9LHsi5a2m5Y+3IjoiMTkwMDAxMTMwNyIsIuWnk+WQjSI6IuadjuaWh+edvyIsIuWIhuaVsCI6OTV9LHsi5a2m5Y+3IjoiMTkwMDAxMTMzOCIsIuWnk+WQjSI6IumSseaYseWGsCIsIuWIhuaVsCI6OTZ9LHsi5a2m5Y+3IjoiMTkwMDAxMTM0NCIsIuWnk+WQjSI6IumprOWuh+eQpiIsIuWIhuaVsCI6OTJ9LHsi5a2m5Y+3IjoiMTkwMDAxMTQyMyIsIuWnk+WQjSI6IuWMhea2m+WwvCIsIuWIhuaVsCI6OTh9LHsi5a2m5Y+3IjoiMTkwMDAxMTQyNCIsIuWnk+WQjSI6IumDrem5jyIsIuWIhuaVsCI6OTB9LHsi5a2m5Y+3IjoiMTkwMDAxMTYxOSIsIuWnk+WQjSI6IuWMhemAuOWNmiIsIuWIhuaVsCI6OTF9LHsi5a2m5Y+3IjoiMTkwMDAxMTYzMiIsIuWnk+WQjSI6IuS7mOeak+eruSIsIuWIhuaVsCI6OTR9LHsi5a2m5Y+3IjoiMTkwMDAxMjQxNyIsIuWnk+WQjSI6IuWwueaTjiIsIuWIhuaVsCI6OTB9LHsi5a2m5Y+3IjoiMTkwMDAxMjQ2MiIsIuWnk+WQjSI6IuadjuWNk+mAuCIsIuWIhuaVsCI6OTd9LHsi5a2m5Y+3IjoiMTkwMDAxMjQ4MSIsIuWnk+WQjSI6Iui1teS6kemjniIsIuWIhuaVsCI6ODV9XQ==')
+ 
+  b = JSON.parse(c);
+  function search(stu_num){
+    var a=false
+    for(i=0; i<b.length; i++){
+      if (stu_num == b[i].学号){
+        document.getElementById('datatable').rows[1].cells[0].innerHTML = b[i].学号;
+        document.getElementById('datatable').rows[1].cells[1].innerHTML = b[i].姓名;
+        document.getElementById('datatable').rows[1].cells[2].innerHTML = b[i].分数;
+        a=true;
+      }
+    }
+    if (!a){
+      alert("not found")
+    }
+  }
+</script>
+
 </html>
