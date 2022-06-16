@@ -77,15 +77,7 @@
         <input type="text" name="stu_num" placeholder="0123456789">
         <button type="button" onclick="search(this.form.stu_num.value)">查询</button>
       </form>
-      <!-- <table id="datatable" border="1" style="margin: auto">
-        <tr>
-          <td>学号</td><td>姓名</td><td>分数</td>
-        </tr>
-        <tr>
-          <td>none</td><td>none</td><td>none</td>
-        </tr>
-      </table> -->
-
+      <p id="results">
 
     </section>
   </div> <!-- container -->
@@ -120,10 +112,8 @@
     var a=false
     for(i=0; i<b.length; i++){
       if (stu_num == b[i].学号){
-        document.getElementById('datatable').rows[1].cells[0].innerHTML = b[i].学号;
-        document.getElementById('datatable').rows[1].cells[1].innerHTML = b[i].姓名;
-        document.getElementById('datatable').rows[1].cells[2].innerHTML = b[i].分数;
         a=true;
+        document.getElementById('results').innerHTML = "姓名：" + b[i].姓名 + "<br/>" + "分数：" + b[i].分数
       }
     }
     if (!a){
