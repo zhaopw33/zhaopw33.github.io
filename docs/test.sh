@@ -1,3 +1,3 @@
 #!/bin/bash
 
-touch /tmp/testfile
+echo "hello"
