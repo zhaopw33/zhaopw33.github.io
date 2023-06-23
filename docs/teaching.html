@@ -90,19 +90,6 @@
       </table>     
       </ol>  
 
-      <!-- <hr><hr> 
-      <h4> 理论力学  </h4>
-      <hr>
-      <h5> 期中成绩查询 ( by Nov 1, 2022 )  </h5>
-
-      <form>
-        <p> 学号： 
-        <input type="text" name="stu_num" placeholder="0123456789">
-        <button type="button" onclick="search(this.form.stu_num.value)">查询</button> 
-        </p>
-      </form>  
-      <p id="results"></p> -->
-
     </section>
   </div> <!-- container -->
 
@@ -126,24 +113,5 @@
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 
 </body>
-
-<script type="text/javascript">
-  
-  c = Base64.decode('aa')
- 
-  b = JSON.parse(c);
-  function search(stu_num){
-    var a=false
-    for(i=0; i<b.length; i++){
-      if (stu_num == b[i].id){
-        a=true;
-        document.getElementById('results').innerHTML = "Initial: " + b[i].nm + "<br/>" + "score: " + b[i].sc
-      }
-    }
-    if (!a){
-      alert("not found")
-    }
-  }
-</script>
 
 </html>
