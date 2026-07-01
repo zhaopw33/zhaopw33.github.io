@@ -1,9 +1,11 @@
 body {
   font-size: 1rem;
+  line-height: 1.65;
 }
 
 .container {
   margin-top: 1rem;
+  max-width: 920px;
 }
 
 .vertical-center {
@@ -19,9 +21,50 @@ section li {
   margin-bottom: 0.5rem;
 }
 
+address {
+  line-height: 1.7;
+}
+
+.navbar {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-link {
+  margin-right: 0.25rem;
+}
+
+.table {
+  font-size: 0.95rem;
+}
+
 footer {
   text-align: center;
   padding: 0.4rem 0;
   border-top: 0.1rem solid #e8e8e8;
   background-color: #f8f8f8;
+}
+
+@media (max-width: 543px) {
+  .container {
+    margin-top: 0.75rem;
+  }
+
+  section {
+    margin-top: 1.5rem;
+  }
+
+  .navbar-nav {
+    float: none !important;
+  }
+
+  .nav-link {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
